@@ -1,14 +1,7 @@
-﻿  AbsDirectoryComponent.cpp
-  AbsDocument.cpp
-  AbsInstanceComponent.cpp
-  Directory.cpp
-  GenericDocument.cpp
+﻿  Agenda.cpp
   Artifact.cpp
-  Minutes.cpp
-  Organization.cpp
-  Records.cpp
-  Agenda.cpp
   Instance.cpp
+  Minutes.cpp
   Generating Code...
 Organization.obj : error LNK2019: unresolved external symbol "public: __cdecl GenericDocument::GenericDocument(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0GenericDocument@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z) referenced in function "private: void __cdecl Organization::initialize(void)" (?initialize@Organization@@AEAAXXZ)
 Organization.obj : error LNK2001: unresolved external symbol "public: virtual class GenericDocument * __cdecl GenericDocument::clone(void)const " (?clone@GenericDocument@@UEBAPEAV1@XZ)

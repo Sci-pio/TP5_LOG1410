@@ -10,5 +10,5 @@ Agenda::Agenda(std::string name, std::string dateTime)
 Agenda* Agenda::clone(void) const
 {
 	// À compléter pour construire un nouvel objet Agenda en appelant le constructeur de copie
-	return nullptr; // À remplacer
+	return new Agenda(*this);
 }

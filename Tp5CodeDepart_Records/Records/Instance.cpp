@@ -6,22 +6,28 @@
 ///////////////////////////////////////////////////////////
 
 #include "Instance.h"
+#include <memory>
 
 Instance::Instance(std::string name)
     : AbsInstanceComponent(name)
 {
 }
-
+// Instance a(b); // avec b qui est deja une Instance
 Instance::Instance(const Instance& mdd)
 	: AbsInstanceComponent(mdd.getName())
 {
-	// À compléter pour copier toutes les instances de niveau inférieur contenues dans l'instance}
+	// À compléter pour copier toutes les instances de niveau inférieur contenues dans l'instance
+	for (InstanceComponentBaseIterator_const it = (mdd.m_instanceContainer).begin(); it != (mdd.m_instanceContainer).end(); it++) {
+		addInstanceComponent(mdd);
+	}
+
 }
 
 Instance* Instance::clone() const
 {
 	// À compléter pour construire un nouvel objet Instance en appelant le constructeur de copie
-	return nullptr; // À remplacer
+
+	return new Instance(*this); 
 }
 
 
@@ -52,8 +58,10 @@ AbsInstanceComponent& Instance::addInstanceComponent(const AbsInstanceComponent&
 	// À compléter pour construire par clonage une copie de l'objet reçu en paramètre
 	// et l'insérer dans le conteneur des instances. On retourne une référence à l'objet
 	// qui vient d'être inséré dans le conteneur.
+	auto a = std::unique_ptr<class AbsInstanceComponent>(member.clone());
+	m_instanceContainer.push_back(a);
 
-	return *this; // À remplacer 
+	return a; // erreur!
 }
 
 void Instance::deleteInstanceComponent(InstanceComponentIterator_const child)
