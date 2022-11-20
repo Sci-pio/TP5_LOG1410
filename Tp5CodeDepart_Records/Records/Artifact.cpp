@@ -15,7 +15,7 @@ Artifact::Artifact(std::string name, const AbsDirectoryComponent& document)
 Artifact* Artifact::clone() const
 {
 	// À compléter pour construire un nouvel objet Artifact en appelant le constructeur de copie
-	return new Artifact(*this);
+	return new Artifact(*this); // À remplacer
 }
 
 const AbsDirectoryComponent& Artifact::getDocument() const
@@ -26,8 +26,9 @@ const AbsDirectoryComponent& Artifact::getDocument() const
 std::ostream& Artifact::printToStream(std::ostream& o) const
 {
 	// À compléter pour imprimer sur un stream le nom de l'artefact ainsi que le nom du document qui y est reference.
-	o << "Artifact: " << getName() << "\n";
-	o << "  --> Document: " << AbsInstanceComponent::getName() << "\n";
+	o << "Artifact: " << getName() << std::endl;
+	indent(o);
+	o << "    --> Document: " << getDocument() << std::endl;
 	return o;
 }
 

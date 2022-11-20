@@ -1,8 +1,2 @@
-﻿  Agenda.cpp
-  Artifact.cpp
-  Instance.cpp
-  Minutes.cpp
-  Generating Code...
-Organization.obj : error LNK2019: unresolved external symbol "public: __cdecl GenericDocument::GenericDocument(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0GenericDocument@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@00@Z) referenced in function "private: void __cdecl Organization::initialize(void)" (?initialize@Organization@@AEAAXXZ)
-Organization.obj : error LNK2001: unresolved external symbol "public: virtual class GenericDocument * __cdecl GenericDocument::clone(void)const " (?clone@GenericDocument@@UEBAPEAV1@XZ)
-C:\Users\HP\Desktop\Skool\A2022\LOG1410\TP5\TP5_LOG1410\Tp5CodeDepart_Records\x64\Debug\Records.exe : fatal error LNK1120: 2 unresolved externals
+﻿  Artifact.cpp
+  Records.vcxproj -> D:\Bac_info_polymtl\LOG1410\tp5\Tp5CodeDepart_Records\x64\Debug\Records.exe
