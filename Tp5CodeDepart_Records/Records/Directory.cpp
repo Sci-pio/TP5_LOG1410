@@ -73,8 +73,12 @@ const AbsDocument* Directory::findDocument(std::string productName) const
 	// portant le nom reçu en argument. Si aucun document n'est trouvé, on retourne nullptr
 	const AbsDocument* foundDocument = nullptr;
 	for (auto& document : m_documents)
-		if (productName == document->getName())
-			foundDocument = dynamic_cast<AbsDocument*>(document.get());
+		if (auto element = dynamic_cast<AbsDocument*>(document.get())) {
+			if (productName == element->getName())
+				foundDocument = element;
+		} else {
+			document->findDocument(productName);
+		}
 	// À compléter
 	return foundDocument;
 }
