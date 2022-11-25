@@ -71,16 +71,17 @@ const AbsDocument* Directory::findDocument(std::string productName) const
 {
 	// À compléter pour itérer sur les éléments contenus dans le répertoire à la recherche d'un document
 	// portant le nom reçu en argument. Si aucun document n'est trouvé, on retourne nullptr
-	const AbsDocument* foundDocument = nullptr;
+	//const AbsDocument* foundDocument = nullptr;
 	for (auto& document : m_documents)
 		if (auto element = dynamic_cast<AbsDocument*>(document.get())) {
 			if (productName == element->getName())
-				foundDocument = element;
+				return element;
 		} else {
-			document->findDocument(productName);
+			if (auto element = document->findDocument(productName))
+				return element;
 		}
 	// À compléter
-	return foundDocument;
+	return nullptr;
 }
 
 std::ostream& Directory::printToStream(std::ostream& o) const
